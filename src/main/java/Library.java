@@ -1,16 +1,19 @@
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Library {
     private String libraryName;
     private Address address;
-    String registerNumber;
-    List<Book> books;
+    private String registerNumber;
+    private Set<Book> books = new HashSet<>();
 
-    public Library(String libraryName, Address address, String registerNumber, List<Book> books) {
+    public Library() {
+    }
+
+    public Library(String libraryName, Address address, String registerNumber) {
         this.libraryName = libraryName;
         this.address = address;
         this.registerNumber = registerNumber;
-        this.books = books;
     }
 
     public String getLibraryName() {
@@ -37,11 +40,26 @@ public class Library {
         this.registerNumber = registerNumber;
     }
 
-    public List<Book> getBooks() {
+    public Set<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<Book> books) {
+    public void setBooks(Set<Book> books) {
         this.books = books;
+    }
+
+    public void addBook(Book book) {
+        this.books.add(book);
+    }
+
+    public void removeBook(Integer isbn) {
+        Book book = new Book();
+        book.setBookIsbnNo(isbn);
+        this.books.remove(book);
+    }
+
+    public boolean collectDues(Integer amount) {
+        System.out.println("Dues Collected");
+        return true;
     }
 }

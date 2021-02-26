@@ -4,11 +4,11 @@ public class Member {
     private Address address;
     MemberAccount memberAccount;
 
-    public Member(Integer id, String name, Address address, MemberAccount memberAccount) {
+    public Member(Integer id, String name, Address address) {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.memberAccount = memberAccount;
+        this.memberAccount = null;
     }
 
     public Integer getId() {
@@ -41,5 +41,10 @@ public class Member {
 
     public void setMemberAccount(MemberAccount memberAccount) {
         this.memberAccount = memberAccount;
+    }
+
+    public void openAnAccount() {
+        MemberAccount memberAccount = new MemberAccount();
+        this.setMemberAccount(memberAccount);
     }
 }
