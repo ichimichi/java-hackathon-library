@@ -16,5 +16,43 @@ public class Address {
         this.pinCode = pinCode;
     }
 
+    public Integer getNo() {
+        return no;
+    }
 
+    public void setNo(Integer no) {
+        this.no = no;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Long getPinCode() {
+        return pinCode;
+    }
+
+    public void setPinCode(Long pinCode) {
+        this.pinCode = pinCode;
+    }
 }
