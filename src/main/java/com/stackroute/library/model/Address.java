@@ -1,3 +1,5 @@
+package com.stackroute.library.model;
+
 public class Address {
     private Integer no;
     private String streetName;

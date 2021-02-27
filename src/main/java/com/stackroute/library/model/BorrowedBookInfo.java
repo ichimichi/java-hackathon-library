@@ -1,9 +1,11 @@
+package com.stackroute.library.model;
+
 import java.time.LocalDate;
 
 public class BorrowedBookInfo {
-    Book book;
-    LocalDate borrowedDate;
-    LocalDate dueDate;
+    private Book book;
+    private LocalDate borrowedDate;
+    private LocalDate dueDate;
 
     public BorrowedBookInfo(Book book, LocalDate borrowedDate, LocalDate dueDate) {
         this.book = book;

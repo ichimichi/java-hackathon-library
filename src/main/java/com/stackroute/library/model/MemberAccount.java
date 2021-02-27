@@ -1,3 +1,5 @@
+package com.stackroute.library.model;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,14 +42,14 @@ public class MemberAccount {
     }
 
     public void returnBook(Library library, Integer isbn) {
-        BorrowedBookInfo borrowedBookInfo = borrowed.stream().filter(b -> b.book.getBookIsbnNo().equals(isbn)).collect(Collectors.toList()).get(0);
+        BorrowedBookInfo borrowedBookInfo = borrowed.stream().filter(b -> b.getBook().getBookIsbnNo().equals(isbn)).collect(Collectors.toList()).get(0);
         if (LocalDate.now().isAfter(borrowedBookInfo.getDueDate())) {
             while (!payDues(library, 100)) {
                 System.out.println("waiting...");
             }
             ;
         }
-        borrowed = borrowed.stream().filter(b -> !b.book.getBookIsbnNo().equals(isbn)).collect(Collectors.toList());
+        borrowed = borrowed.stream().filter(b -> !b.getBook().getBookIsbnNo().equals(isbn)).collect(Collectors.toList());
     }
 
     public boolean payDues(Library library, Integer amount) {

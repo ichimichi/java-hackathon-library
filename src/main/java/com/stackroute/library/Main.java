@@ -1,12 +1,19 @@
+package com.stackroute.library;
+
+import com.stackroute.library.model.Address;
+import com.stackroute.library.model.Book;
+import com.stackroute.library.model.Library;
+import com.stackroute.library.model.Member;
+
 public class Main {
     public static void main(String[] args) {
         // initializing a new library
-        System.out.println("Creating Library");
+        System.out.println("Creating com.stackroute.library.model.Library");
         Library niceLibrary = new Library();
 
         // adding books to the library
         niceLibrary.addBook(new Book(1, "APJ Abdul Kalam", "Macmillan"));
-        niceLibrary.addBook(new Book(2, "Abhay K", "Hachette Address.Book Group"));
+        niceLibrary.addBook(new Book(2, "Abhay K", "Hachette com.stackroute.library.model.Address.com.stackroute.library.model.Book Group"));
         niceLibrary.addBook(new Book(3, "William Shakespeare", "Harper Collins"));
         niceLibrary.addBook(new Book(4, "William Shakespeare", "Simon and Schuster"));
 
@@ -35,21 +42,21 @@ public class Main {
         System.out.println(member.getMemberAccount() == null ? "No" : "Yes");
 
         System.out.println("\nBooks borrowed by " + member.getName());
-        member.getMemberAccount().getBorrowed().forEach(b -> System.out.println(b.book.getBookIsbnNo() + " " + b.book.getAuthor() + " " + b.book.getPublisher()));
+        member.getMemberAccount().getBorrowed().forEach(b -> System.out.println(b.getBook().getBookIsbnNo() + " " + b.getBook().getAuthor() + " " + b.getBook().getPublisher()));
         System.out.println("...");
 
         System.out.println("\nBorrowing Books ...");
         member.getMemberAccount().borrowBook(niceLibrary, 1);
         member.getMemberAccount().borrowBook(niceLibrary, 3);
         member.getMemberAccount().borrowBook(niceLibrary, 4);
-        member.getMemberAccount().getBorrowed().forEach(b -> System.out.println(b.book.getBookIsbnNo() + " " + b.book.getAuthor() + " " + b.book.getPublisher()));
+        member.getMemberAccount().getBorrowed().forEach(b -> System.out.println(b.getBook().getBookIsbnNo() + " " + b.getBook().getAuthor() + " " + b.getBook().getPublisher()));
 
         // returning a book
         System.out.println("\nReturning a book...");
         member.getMemberAccount().returnBook(niceLibrary, 3);
 
         System.out.println("\nNow, Books borrowed by " + member.getName());
-        member.getMemberAccount().getBorrowed().forEach(b -> System.out.println(b.book.getBookIsbnNo() + " " + b.book.getAuthor() + " " + b.book.getPublisher()));
+        member.getMemberAccount().getBorrowed().forEach(b -> System.out.println(b.getBook().getBookIsbnNo() + " " + b.getBook().getAuthor() + " " + b.getBook().getPublisher()));
         System.out.println("...");
     }
 }

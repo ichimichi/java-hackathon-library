@@ -1,3 +1,5 @@
+package com.stackroute.library.model;
+
 import java.util.Objects;
 
 public class Book {

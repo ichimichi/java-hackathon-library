@@ -1,3 +1,5 @@
+package com.stackroute.library.model;
+
 public class Member {
     private Integer id;
     private String name;
